@@ -1,0 +1,66 @@
+
+TASK 1: LOGIN
+
+
+Command:
+
+ POST http://localhost:3000/auth/login 
+"Content-Type: application/json" 
+'{"email":"hariomppatel@gmail.com","password":"hariompatel723"}'
+
+Response:
+{
+    "message": "OTP sent",
+    "loginSessionId": "tyo6ny"
+}
+
+
+
+
+Command:
+ POST http://localhost:3000/auth/verify-otp
+ "Content-Type: application/json" 
+'{"loginSessionId":"tyo6ny","otp":"569901"}'
+
+
+
+Response:
+{
+    "message": "OTP verified",
+    "sessionId": "tyo6ny"
+}
+
+
+
+TASK 3: GET ACCESS TOKEN
+
+
+Command:
+ POST http://localhost:3000/auth/token
+
+
+Response:
+{
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhcmlvbXBwYXRlbEBnbWFpbC5jb20iLCJzZXNzaW9uSWQiOiJ0eW82bnkiLCJpYXQiOjE3NzA4NDMyOTYsImV4cCI6MTc3MDg0NDE5Nn0.Wo1eC1vgyQ-K8gWmMXGXkrpWlodZblN0JTM7nXuWG0k",
+    "expires_in": 900
+}
+
+
+
+TASK 4: ACCESS PROTECTED ROUTE
+
+
+Command:
+"Authorization: Bearer <access_token>" http://localhost:3000/protected
+
+Response:
+{
+    "message": "Access granted",
+    "user": {
+        "email": "hariomppatel@gmail.com",
+        "sessionId": "tyo6ny",
+        "iat": 1770843296,
+        "exp": 1770844196
+    },
+    "success_flag": "FLAG-aGFyaW9tcHBhdGVsQGdtYWlsLmNvbV9DT01QTEVURURfQVNTSUdOTUVOVA=="
+}
