@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # The Silent Server (Backend Debugging Assignment)
 
 This API is intentionally broken. Your task is to debug it and complete the authentication flow.
@@ -109,3 +110,7 @@ To submit your assignment:
     *   This file must contain the terminal output of all 4 test commands (Login, Verify OTP, Get Token, Access Protected Route).
     *   Ensure the final command's output showing the `success_flag` is clearly visible in this file.
 3.  Share the link to your repository.
+=======
+# Assignment
+good experience
+>>>>>>> f5eeb11787808830ad5b8720d82673ae8a65857e
